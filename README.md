@@ -1,4 +1,4 @@
-# Neural Network vs PINN for Burgers' Equation
+# Neural Network vs PINN for 1D Burgers' Equation
 
 ## Learning from Sparse Measurements and Predicting Beyond the Data-Training Region
 
