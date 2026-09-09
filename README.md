@@ -165,13 +165,7 @@ model_pinn = make_network()                             # physics-informed neura
 The ordinary neural network minimizes only the measurement error:
 
 $$
-\mathcal{L}_{\mathrm{NN}}
-=
-\frac{1}{N_d}
-\sum_{i=1}^{N_d}
-\left[
-u_\theta(x_i,t_i)-u_i
-\right]^2.
+\mathcal{L}_{\mathrm{NN}} = \frac{1}{N_d}\sum_{i=1}^{N_d}\left[u_\theta(x_i,t_i)-u_i\right]^2.
 $$
 
 ```python
@@ -279,9 +273,7 @@ $$
 The physics residual is
 
 $$
-r_\theta(x,t)
-=
-u_t+u_\theta u_x-\nu u_{xx}.
+r_\theta(x,t) = u_t+u_\theta u_x-\nu u_{xx}.
 $$
 
 ```python
@@ -313,16 +305,9 @@ def burgers_residual(model,X):
 The PINN minimizes
 
 $$
-\mathcal{L}_{\mathrm{PINN}}
-=
-10\mathcal{L}_{\mathrm{data}}
-+
-\mathcal{L}_{\mathrm{physics}}
-+
-10\mathcal{L}_{\mathrm{IC}}
-+
-10\mathcal{L}_{\mathrm{BC}}.
+\mathcal{L}_{\mathrm{PINN}} = 10\mathcal{L}_{\mathrm{data}} + \mathcal{L}_{\mathrm{physics}} + 10\mathcal{L}_{\mathrm{IC}} + 10\mathcal{L}_{\mathrm{BC}}
 $$
+
 
 ```python
 
@@ -357,6 +342,7 @@ for epoch in range(epochs_pinn):
 ```
 
 ## 8. Compare the training histories
+
 
 ```python
 
