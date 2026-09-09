@@ -20,22 +20,14 @@ $$
 
 To focus on the comparison between the NN and PINN, reference data are generated using the exact travelling-wave solution.
 
+
+## Exact Solution (Reference Data)
+
 $$
-u(x,t)
-=
-\frac{1}{2}
--
-\frac{1}{2}
-\tanh\left(
-\frac{x-\frac{1}{2}t}{4\nu}
-\right)
+u(x,t) = \frac{1}{2} - \frac{1}{2} \tanh\left(\frac{x - \frac{1}{2}t}{4\nu}\right)
 $$
 
-
-## Training Strategy
-
-The conventional Neural Network is trained using only sparse solution measurements from the early-time region:
-
+## Training Data Region
 
 $$
 0 \leq t \leq 0.35
@@ -64,6 +56,8 @@ contains no supervised training data and is therefore considered the **data-trai
 However, this region remains within the physical domain and is included in the PINN's physics-based training through the collocation points.
 
 The trained NN and PINN are subsequently evaluated over the complete space-time domain and compared against the reference solution.
+
+
 
 
 ```python
